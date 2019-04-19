@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,initial-scale=1.0,user-scalable=no">
+    <title>商品分类</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/class-nav.css">
+
+</head>
+
+<body>
+<!-- 头部搜索 -->
+    <header>
+        <a href="index.html" class="back"></a>
+        <input type="search" class="search">
+        <span class="menu"></span>
+        <div class="classfiy-pop hide">
+            <div class="mask-layer"></div>
+            <ul class="classfiy-nav">
+                <li class="home-li">
+                    <a href="index.html"><i></i>首页</a>
+                </li>
+                <li class="classfiy-li">
+                    <a href=""><i></i>分类</a>
+                </li>
+                <li class="car-li">
+                    <a href="cart.html"><i></i>购物车</a>
+                </li>
+                <li class="my-li">
+                    <a href=""><i></i>我的莱德</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+<!-- 头部搜索 -->   
+<!-- 主体内容区域  -->
+    <main class="content">
+        <!-- 左部导航 -->
+        <nav class="nav-category wrapper">
+            <div class="scroll-r">
+                <ul>
+                    <li class="1f active" data-id="1f">热门推荐</li>
+                    <li class="2f" data-id="2f">特色美食</li>
+                    <li class="3f" data-id="3f">美妆/洗护</li>
+                    <li class="4f" data-id="4f">厨卫清洁</li>
+                    <li class="5f" data-id="5f">家居生活</li>
+                    <li class="6f" data-id="6f">家用电器</li>
+                    <li class="7f" data-id="7f">母婴教育</li>
+                    <li class="8f" data-id="8f">运动户外</li>
+                    <li class="9f" data-id="9f">箱包</li>
+                    <li class="10f" data-id="10f">配饰</li>
+                    <li class="11f" data-id="11f">手机/数码</li>
+                    <li class="12f" data-id="12f">服饰内衣</li>
+                    <li class="13f" data-id="13f">鞋靴</li>
+                    <li class="14f" data-id="14f">电脑办公</li>
+                    <li class="15f" data-id="15f">汽车</li>
+                    <li class="16f" data-id="16f">邮票卡券</li>
+                    <li class="17f" data-id="17f">图书/音像</li>
+                    <li class="18f" data-id="18f">消费卡券/票券</li>
+                    <li class="19f" data-id="19f">进口食品</li>
+                    <li class="20f" data-id="20f">宠物医院</li>
+                </ul>
+            </div>
+
+        </nav>
+        <!-- 左部导航 -->
+        <!-- 右部详情 -->
+        <div class="category wrapper2">
+            <div class="scroll-r">
+                <div class="banner-area">
+
+                </div>
+                <script type="text/template" class="recom">
+                    <%if(list.code==0){%>
+                        <%if(list.list.length>1){%>
+                            <div class="bg swiper-container" id="bg">
+                                <div class="temp swiper-wrapper">
+                                        <%list.list.forEach(function(list){%>
+                                        <div class="swiper-slide">
+                                            <a href="" data-title="<%=list.title%>"><img src="<%=list.images%>" alt=""></a>
+                                        </div>
+                                        <%})%>
+                                </div>
+                                
+                            </div>
+        
+                            <div class="swiper-pagination " id="hd">
+                            </div>
+                        <%}else{%>
+                            <div class="bg">
+                                <div>
+                                    <%list.list.forEach(function(list){%>
+                                    <div>
+                                        <a href="" data-title="<%=list.title%>"><img src="<%=list.images%>" alt=""></a>
+                                    </div>
+                                    <%})%>
+                                </div>
+                            </div>
+                        <%}%>
+                        
+                    <%}%>
+                </script>
+                <div class="brand-area">
+
+                </div>
+                <script type="text/template" id="tpl">
+                    <%if(list.code==0){%>
+                        <h3>热门品牌</h3>
+                        <ul>
+                            <%list.list.forEach(function(list){%>
+                                
+                            <li>
+                                <a href="" data-title="<%=list.dataTitle%>"><img src="images/class-nav/<%=list.images%>" alt=""></a>
+                            </li>
+                            <%})%>
+                        </ul>
+                    <%}%>
+                    
+                </script>
+
+                <div class="second-type">
+                    <div class="hot-area"></div>
+                    <script type="text/template" class="default">
+                        <h3>为您推荐</h3>
+                        <ul class="fistUl">
+                            <%list.list.forEach(function(list){%>
+                            <li>
+                                <a href="" data-keyword="<%=list.dataTitle%>" data-title="<%=list.dataTitle%>"><img src="images/class-nav/<%=list.recommend%>" alt=""></a>
+                            </li>
+                            <%})%>
+                        </ul>
+                    </script>
+
+                    <script type="text/template" class="cat">
+                        
+                        <%if(list.code==0){
+                            var str =[];
+                            list.list.forEach(function(list){
+                                if(str.indexOf(list.classify)==-1){
+                                    str.push(list.classify)
+                                }
+                            })
+                            
+                            for(var i=0;i<str.length;i++){%>
+                                <%if(str[i]=='为您推荐'){%>
+                                    <h3>为您推荐</h3>
+                                    <ul>
+                                        <%list.list.forEach(function(list){%>
+                                        <li>
+                                            <a href="" data-keyword="<%=list.dataTitle%>" data-title="<%=list.dataTitle%>"><img src="images/class-nav/<%=list.recommend%>" alt=""></a>
+                                        </li>
+                                        <%})%>
+                                    </ul>
+                                <%}else{%>
+                                    <h3 class="arrow"><%=str[i]%></h3>
+                                    <ul>
+                                        <%list.list.forEach(function(list){%>
+                                            <%if(str[i]==list.classify){%>
+                                                <li>
+                                                    <a href="" data-title="<%=list.dataTitle%>"><%=list.dataTitle%></a>
+                                                </li>
+                                            <%}%>
+                                        <%})%>
+                                    </ul>
+                                <%}%>
+                                
+                            <%}%>
+                        <%}%>
+                    </script>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- 右部详情 -->
+    </main>
+<!-- 主体内容区域 -->
+<!-- 搜索 -->
+    <div class="search-container hide">
+        <a href="" class="close"></a>
+        <h3 class="search-box">
+            <form class="searchForm" action="/goodslist ">
+                <input type="search" class="searchkeyWord" maxlength="30" placeholder="" name="keyWords">
+                <span class="search-btn">搜索</span>
+                <i class="clear hide"></i>
+            </form>
+        </h3>
+        <div class="search-warp">
+            <h3>热门搜索</h3>
+            <ul>
+                <li>灰枣</li>
+                <li>抽纸</li>
+                <li>保暖内衣</li>
+                <li>护手霜</li>
+                <li>取暖器</li>
+            </ul>
+        </div>
+    </div>
+<!-- 搜索 -->
+</body>
+<script src="js/base.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/ejs.js"></script>
+<script src="js/iscroll.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/class-nav.js"></script>
+<script>
+    var myScroll = new IScroll('.wrapper', {
+        scrollbars: false,
+        preventDefault: false,
+        snap: true
+    });
+    var myScroll2 = new IScroll('.wrapper2', {
+        scrollbars: false,
+        preventDefault: false,
+        snap: true
+    });
+
+    // var swiper = new Swiper('#bg', {
+    //     pagination: {
+    //         el: '.swiper-pagination',
+    //         dynamicBullets: true,
+    //     },
+    // });
+</script>
+
+</html>

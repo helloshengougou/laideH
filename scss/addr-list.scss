@@ -1,0 +1,102 @@
+@charset 'utf-8';
+$width:7.5rem;
+body{
+    background-color: #f2f2f2;
+}
+// 头部开始
+header{
+    width: $width;
+    position: relative;
+    text-align: center;
+    h3{
+        background: #fefefe;
+        border-bottom: none;
+        color: #333333;
+        // position: relative;
+        height: .8rem;
+        width: $width;
+        line-height: .8rem;
+        // text-align: center;
+        font-size: .36rem;
+        font-weight: 400;
+        box-sizing: border-box;
+    }
+    a.iconfont{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1rem;
+        height: 0.8rem;
+        line-height: .8rem;
+        font-size: .5rem;
+        font-weight: bold;
+        color: #333;
+    }
+}
+// 头部结束
+// 地址列表开始
+.addr-list{
+    min-height: 4rem;
+    li{
+        padding: 0 .22rem;
+        margin-top: .2rem;
+        background: #fff;
+        .default{
+            display: flex;
+            height: 0.8rem;
+            line-height: .8rem;
+            font-size: .28rem;
+            p{
+                padding-left: .05rem
+            }
+            .active{
+                color: red
+            }
+        }
+        i{
+            font-size: .44rem;
+            &.icon-dui1{
+                color: red
+            }
+        }
+        .info{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: .28rem;
+            padding-bottom: .1rem;
+            div{
+                width: 6rem;
+                padding-top: .2rem 0 .2rem;
+                overflow: hidden;
+                p{
+                    margin-bottom: .2rem;
+                   
+                }
+
+            }
+            i{
+                font-size: .5rem
+            }
+        }
+    }
+}
+// 地址列表结束
+// 添加收货地址按钮
+.add-addr{
+    margin-top: .3rem;
+    width: $width;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    img{
+        width: 1.2rem;
+    }
+    figcaption{
+        color: #333;
+        font-size: .28rem;
+    }
+}

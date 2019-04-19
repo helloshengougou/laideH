@@ -1,0 +1,102 @@
+@import"public.scss";
+header {
+    @include background(store_banner_bg,png,no-repeat,store);
+    background-size: 7.5rem 3.5rem;
+    width: 7.5rem;
+    height: 3.5rem;
+    .top {
+        @include flex(flex,row,space-between);
+        height: .8rem;
+        i {
+            @include ml(.2rem,.2rem);
+            font-size: .56rem;
+            color: white;
+        }
+    }
+    .title {
+        height: .8rem;
+        @include flex(flex,row,space-between);
+        @include ml(.3rem,.2rem);
+        @include tb(.3rem);
+        .store {
+            img {
+                width: .8rem;
+                height: .8rem;
+                @include ml(0,.3rem);
+            }
+            @include flex(flex,row);
+            .cont {
+                p {
+                    color: white;
+                    font-size: .28rem;
+                }
+                .star {
+                    width: 2rem;
+                    img {
+                        width: 2rem;
+                        height: .28rem;
+                    }
+                }
+            }
+        }
+        .collect {
+            img {
+                width: 1.2rem;
+                height: .52rem;
+            }
+        }
+    }
+    .comment {
+        width: 7.5rem;
+        height:.28rem;
+        @include tb(.4rem);
+        ul {
+            @include flex(flex,row,space-between);
+            @include ml(.3rem,.3rem);
+            li {
+                font-size: .28rem;
+                color: #fff;
+            }
+        }
+    }
+}
+section {
+    .search {
+        @include flex(flex,row,space-between);
+        width: 7.5rem;
+        height: .9rem;
+        @include bgc(white);
+        .box {
+            @include tb(.2rem);
+            @include ml(.8rem);
+            img {
+                // @include flex(flex,row,space-between,center);
+                @include ml(.3rem);
+                @include tb(.03rem);
+                width: 0.36rem;
+                height: 0.36rem;
+            }
+            width: 6rem;
+            height: .56rem;
+            @include bgc(#fcf3f3);
+            border-radius: .56rem;
+            input {
+                height: .6rem;
+                line-height: .6rem;
+                width: 4.5rem;
+                @include bgc(#fcf3f3);
+                outline: none;
+                @include ml(.1rem);
+                font-size: .28rem;
+            }
+        }
+        .type {
+            img {
+                width: .54rem;
+                height: .8rem;
+                @include tb(.1rem);
+                @include ml(0,.1rem);
+            }
+        }
+    }
+}

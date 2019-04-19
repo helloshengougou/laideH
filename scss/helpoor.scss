@@ -1,0 +1,51 @@
+@import"public.scss";
+header {
+    img {
+        width: 7.5rem;
+        height: 3.5rem;
+    }
+}
+section {
+    ul {
+        @include flex(flex,row,space-between);
+        flex-wrap: wrap;
+        background-color: #f1f1f1;
+        li {
+            @include tb(.2rem,.2rem);
+            border: 1px solid lightblue;
+            width: 3.6rem;
+            height: 5.56rem;
+            background-color: #fff;
+            img {
+                width: 100%;
+            }
+            h3 {
+                height: .72rem;
+                font-size: .3rem;
+                overflow: hidden;
+            }
+            .price {
+                span {
+                    font-size: .28rem;
+                    color: #000;
+
+                }
+                @include flex(flex,row,space-between);
+                @include tb(.08rem,.08rem);
+                font-size: .32rem;
+                font-weight: 700;
+                font-style: normal;
+                color: red;
+                padding-right: 1.5rem;
+            }
+            .on {
+                text-align: center;
+                background-color: #ee3a39;
+                font-size: .32rem;
+                height: .7rem;
+                line-height: .7rem;
+                color: #fff;
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+//position属性  默认值 absolute 0 0
+@mixin position($left:0rem,$top:0rem) {
+    position: absolute;
+    left: $left;
+    top: $top;
+}
+
+//width 默认值 0
+@mixin width($width:0rem) {
+    width: $width;
+}
+//高度  默认值 0
+@mixin height($height:0rem){
+    height: $height;
+}
+
+//弹性盒子flex 默认值display：flex row;
+@mixin flex($flex:flex,$dir:row,$jus:none,$ali:none) {
+    display: $flex;
+    flex-direction: $dir;
+    justify-content: $jus;
+    align-items:$ali;
+}
+
+//背景图片
+@mixin background($url:headBg,$rule:png,$no:no-repeat,$ht:farming) {
+    background:url(../images/#{$ht}/#{$url}.#{$rule})$no;
+}
+
+// margin-left margin-right 默认值 0 0
+@mixin ml($vll:0rem,$vlr:0rem) {
+    margin-left: $vll;
+    margin-right: $vlr;
+}
+
+//背景颜色
+@mixin bgc($ur: #fff) {
+    background-color: $ur;
+}
+
+//margin top bottom默认值 0 0
+@mixin tb($vlt:0rem,$vlb:0rem) {
+    margin-top: $vlt;
+    margin-bottom: $vlb;
+}
+
+//border-radious 默认值 0
+@mixin ra($ra: 0rem) {
+    border-radius: $ra;
+}
+
+//text-align 默认值 center
+@mixin ta($ca: center) {
+    text-align: $ca;
+}

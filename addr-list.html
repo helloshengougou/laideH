@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>收货地址</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/addr-list.css">
+    <script src="js/util.js"></script>    
+    <script src="js/user.js"></script>
+</head>
+<body>
+    <!-- 头部开始 -->
+    <header>
+        <a href="javascript:history.go(-1);" class="iconfont icon-iconfontjiantou1"></a>
+        <h3 class="title red">收货地址管理</h3>
+    </header>
+    <!-- 头部结束 -->
+    <!-- 地址列表开始 -->
+    <ul class="addr-list">
+        <script type="text/template" id="listl">
+        <% listData.forEach(function(val,index){%>
+        <% if(val.defaultAddr==0){ %>
+        <li data-id="<%=val.Id%>">
+            <div class="default">
+                <i class='iconfont icon-dui1'></i> <p class="active">默认地址</p>
+            </div>
+            <div class="info">
+                <div>
+                    <p>
+                        <span class="name"><%=val.consignee%></span>
+                        <span class="num"><%=val.addrNum%></span>
+                    </p>
+                    <p><%=val.addr1%>&nbsp;<%=val.addr2%></p>
+                </div>
+                <i class='iconfont icon-bianji'></i>
+            </div>
+        </li>
+        <%}%>
+        <%})%>
+        <% listData.forEach(function(val,index){%>
+            <% if(val.defaultAddr==1){ %>
+            <li data-id="<%=val.Id%>">
+                <div class="default">
+                    <i class='iconfont icon-yuan'></i> <p>默认地址</p>
+                </div>
+                <div class="info">
+                    <div>
+                        <p>
+                            <span class="name"><%=val.consignee%></span>&nbsp;
+                            <span class="num"><%=val.addrNum%></span>
+                        </p>
+                        <p><%=val.addr1%>&nbsp;&nbsp;<%=val.addr2%></p>
+                    </div>
+                    <i class='iconfont icon-bianji'></i>
+                </div>
+            </li>
+        <%}%>
+        <%})%>
+    </script>
+    </ul>
+    <!-- 地址列表结束 -->
+    <!-- 添加收货地址按钮 -->
+    <div class="add-addr">
+        <a href="add-addr.html">
+            <figure>
+                <img src="images/addr-list/p_address_bg.png"/>
+                <figcaption>添加收货地址</figcaption>
+            </figure>
+        </a>
+    </div>
+</body>
+<script src="js/base.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/ejs.js"></script>
+<script src="js/addr-list.js"></script>
+</html>

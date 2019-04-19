@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/All-kinds-of-goods.css">
+</head>
+
+<body>
+    <header>
+        <!-- 头部 固定定位 -->
+        <div class="first">
+            <i class="iconfont icon-iconfontjiantou1"></i>
+            <span class="title">生鲜美食</span>
+            <i class="iconfont icon-shaixuan"></i>
+        </div>
+    </header>
+    <main>
+        <!-- 导航tab切换 -->
+        <ul class="nav">
+            <li>
+                <span class="a nav-font">人气</span>
+            </li>
+            <li>
+                <div class="a b">价格
+                    <img src="images/famousProduct/箭头_上.png" alt="" class="arrows">
+                </div>
+            </li>
+        </ul>
+        <section class="main-content">
+            <div class="content">
+                <script type="text/template" id="tpl">
+            <%shop.forEach(function(more){%>
+                <a href="./particulars.html">
+            <div class="shop">
+                <img src="<%=more.imgurl%>" alt="">
+                <div class="explain">
+                    <p class="name"><%=more.listname%></p>
+                    <p class="price">
+                        <span class="now">￥<%=more.pointPrice%></span>
+                        <span class="before">￥<%=(parseFloat(more.maxPrice)).toFixed(1)%></span>
+                    </p>
+                </div>
+                
+            </div>
+        </a>
+            <% }) %>
+        </script>
+            </div>
+            <div class="content2">
+                <script type="text/template" id="tpl">
+            <%shop.forEach(function(more){%>
+                <a href="./particulars.html">
+            <div class="shop">
+                <img src="<%=more.imgurl%>" alt="">
+                <div class="explain">
+                    <p class="name"><%=more.listname%></p>
+                    <p class="price">
+                        <span class="now">￥<%=more.pointPrice%></span>
+                        <span class="before">￥<%=(parseFloat(more.maxPrice)).toFixed(1)%></span>
+                    </p>
+                </div>
+                
+            </div>
+        </a>
+            <% }) %>
+        </script>
+            </div>
+            <div class="content3">
+                <script type="text/template" id="tpl">
+            <%shop.forEach(function(more){%>
+                <a href="./particulars.html">
+            <div class="shop">
+                <img src="<%=more.imgurl%>" alt="">
+                <div class="explain">
+                    <p class="name"><%=more.listname%></p>
+                    <p class="price">
+                        <span class="now">￥<%=more.pointPrice%></span>
+                        <span class="before">￥<%=(parseFloat(more.maxPrice)).toFixed(1)%></span>
+                    </p>
+                </div>
+                
+            </div>
+        </a>
+            <% }) %>
+        </script>
+            </div>
+        </section>
+        <div class="floor-font">拉动继续加载</div>
+        <div class="alert">没有找到相关内容</div>
+    </main>
+    <div class="side hide">
+        <div class="property">
+            <div class="top">
+                <div class="shuxing na-font">属性</div>
+            </div>
+            <div class="brand-box">
+                <div class="brand">品牌
+                    <img src="images/famousProduct/箭头-下-粗线条.png" alt="" class="arrows">
+                </div>
+                <div class="shop hiden">
+                    <ul>
+                        <!-- <li class="shop-brand">淮实
+                            <i class="change"></i>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="discounts-box">
+                <div class="discounts">优惠
+                    <img src="images/famousProduct/箭头-下-粗线条.png" alt="" class="arrow">
+                </div>
+                <div class="active hiden">
+                    <ul>
+                        <!-- <li class="shop-brand">淮实
+                            <i class="change"></i>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="pay">支持邮乐卡支付
+                <i class="iconfont"></i>
+            </div>
+            <div class="postage">商家包邮
+                <i class="iconfont"></i>
+            </div>
+            <div class="price ">价格区间</div>
+            <div class="section">
+                <input type="text" placeholder="0" class="star">
+                <div class="xian"></div>
+                <input type="text" placeholder="∞" class="end">
+            </div>
+            <div class="btn">
+                <div class="shore">确定</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/base.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/touch.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/scrollto.js"></script>
+<script src="js/fx_methods.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/fastclick.js"></script>
+<script src="js/All-kinds-of-goods.js"></script>
+<script src="js/ejs.js"></script>
+
+</html>

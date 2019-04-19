@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <script src="js/util.js"></script>    
+    <script src="js/user.js"></script>
+</head>
+
+<body>
+    <!-- 头部开始 -->
+    <header>
+        <a href="javascript:history.go(-1);" class="iconfont icon-iconfontjiantou1"></a>
+        <h3 class="">购物车</h3>
+        <a class="iconfont icon-sangedian"></a>
+    </header>
+    <!-- 头部结束 -->
+    <!-- 主体部分开始 -->
+    <main>
+        <!-- 购物车为空时,显示空购物车图片 -->
+        <figure class="nocenter">
+            <img src="images/cart/cart_empty_bg.png"/>
+            <figcaption>购物车空空如也,去挑几件中意的商品吧!</figcaption>
+        </figure>
+        <!-- 购物车为空时,显示'猜您喜欢'商品列表 -->
+        <!-- 列表开始 -->
+        <div class="more">
+            <div class="title">
+                <div class="bar"></div>
+                <h3>猜您喜欢</h3>
+            </div>
+            <ul class="content">
+            </ul>
+            <figure class="loading">  
+                <img src="images/index/loading1.gif" alt="">
+                <figcaption>加载中...</figcaption>
+            </figure>
+            <p class="no-data">已经没有任何相关数据</p>
+            <script type="text/template" id="listl">
+                <% listData.forEach(function(val,index){%>
+                <li class="list">
+                    <a href="particulars.html">
+                        <img src="<%=val.imgUrl%>" alt="<%=val.listingName%>">
+                    </a>
+                    <p class="prod-name">
+                        <a href="particulars.html"><%=val.listingName%></a>
+                    </p>
+                    <div class="price">
+                        <div class="prod-price">
+                            <del>￥<%=val.maxPrice%></del>
+                            <p>￥<%=val.minPrice%></p>
+                        </div>
+                        <div class="discount">
+                            约<%=((val.minPrice/val.maxPrice)*10).toFixed(1)%>折
+                        </div>
+                    </div>
+                </li>
+                <%})%>
+            </script>
+        </div>
+        <!-- 列表结束 -->
+    </main>
+    <!-- 主体部分结束 -->
+    <script type="text/template" id="cartl">
+        <% var storeIdArr = [], storeNameArr=[],urlstr='particulars.html';%>
+        <% cartData.forEach(function(val,index){%>
+            <% if (storeIdArr.indexOf(val.storeId) == -1) {
+                storeIdArr.push(val.storeId);
+                storeNameArr.push(val.storeName);
+            }%>
+        <%})%>
+        <% storeIdArr.forEach(function(val2,index2){%>
+            <% var num=0, sum=0,discount=0;%>
+            <div class='car-store' data-Id="<%=storeIdArr[index2]%>">
+                <div class='store-info'>
+                    <i class='chk-store iconfont icon-yuan'></i>
+                    <a class='storename' href='store.html' target='_blank'><%=storeNameArr[index2]%></a>
+                </div>
+                <div class='store-items'>
+                    <% cartData.forEach(function(val,index){%>
+                        <% if (storeIdArr[index2] == val.storeId){%>
+                            <%num += parseInt(val.listNum);%>
+                            <%sum += parseFloat(val.price*val.listNum);%>
+                            <div class="item-box">
+                                <div class='store-item' data-option='<%=val.listId%>'>
+                                    <div class='item-check'>
+                                        <i class='chk-item iconfont icon-yuan'></i>
+                                    </div>
+                                    <div class='item-pic'>
+                                        <a href='<%=urlstr%>' class='prod-img' target='_blank'>
+                                            <img src='<%=val.img%>' alt='<%=val.listingName%>'>
+                                        </a>
+                                    </div>
+                                    <div class='goods-info'>
+                                        <a href='<%=urlstr%>' class="goods-name"><%=val.listingName%></a>
+                                        <div class='item-attr'>
+                                            <p class='color'>颜色 : <span><%=val.listColor%></span></p>
+                                            <p class='size'>尺码 : <span><%=val.listSize%></span></p>
+                                        </div>
+                                        <div class='item-price'>
+                                            <% if(val.maxPrice>0){ %>
+                                                <p><span class='price'>￥<%=val.price%></span><del>￥<%=val.maxPrice%></del></p>
+                                                <%discount+=(val.maxPrice-val.price)*val.listNum%>
+                                            <%} else {%>
+                                                <p><span class='price'>￥<%=val.price%></span><del style="display:none">￥<%=val.price%></del></p>
+                                            <%}%>
+                                            
+                                            <div class="num">
+                                                <%if (val.listNum == 1) {%>
+                                                    <span class='btn-down disabled'>-</span>
+                                                <%} else {%>
+                                                    <span class='btn-down'>-</span>
+                                                <%}%>
+                                                <input type='text' value='<%=val.listNum%>' class='goods-num'>
+                                                <span class='btn-up'>+</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="delete">删除</div>
+                            </div>
+                        <%}%>
+                    <%})%>
+                </div>
+                <div class="order-info">
+                    <p class="order-num">数量:<span><%=num%></span></p>
+                    <div class="total">
+                        <p class="all-dis">优惠:<span>￥<%=discount.toFixed(2)%></span></p>
+                        <p>应付:<span class="all-total">￥<%=sum.toFixed(2)%></span></p>
+                    </div>
+                </div>
+            </div>
+        <%})%>
+    </script>
+    <!-- 购物车底部功能模块开始 -->
+    <footer>
+        <div class="footer-l">
+            <div class="select-all">
+                <i class="iconfont icon-dui"></i>全选
+            </div>
+            <p class="fr">总价:<strong>￥0.00</strong><br>(不含运费)</p>
+        </div>
+        <a target="_blank" class="btn-gotocar">去付款(<span>0</span>)</a>
+    </footer>
+    <!-- 购物车底部功能模块结束 -->
+    <!-- 右上角导航部分开始 -->
+    <div class="classfiy-pop">
+        <ul>
+            <li class="homeLi"><a href="index.html"><i></i>首页</a></li>
+            <li class="classfiyLi"><a href="class-nav.html"><i></i>分类</a></li>
+            <li class="cartLi"><a href="cart.html"><i></i>购物车</a></li>
+            <li class="my_centerLi"><a href="personal-center.html"><i></i>我的邮乐</a></li>
+        </ul>
+    </div>
+    <!-- 右上角导航部分结束 -->
+    <!-- 删除确认框开始 -->
+    <div class="tips">
+        <div class="box">
+            <div class="msg">
+                <p>确定删除?</p>
+            </div>
+            <div class="btn">
+                <div class="cancel">取消</div>
+                <div class="enter">确定</div>
+            </div>
+        </div>
+    </div>
+    <!-- 删除确认框结束 -->
+    <!-- 返回顶部按钮 -->
+    <div class="fixed-btn">
+        <a class="go-back"><i class="iconfont icon-zhixiang-shang"></i></a>
+    </div>
+</body>
+<script src="js/base.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/fx_methods.js"></script>
+<script src="js/scrollto.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/ejs.js"></script>
+<script src="js/fastclick.js"></script>
+<script src="js/touch.js"></script>
+<script src="js/cart.js"></script>
+
+</html>

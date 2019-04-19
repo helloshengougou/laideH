@@ -1,0 +1,16 @@
+header {
+  background: url(../images/farming/headBg.png);
+  width: 7.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: none;
+  align-items: none;
+  height: 0.8rem;
+}
+
+header a img {
+  margin-left: 0.5rem;
+  margin-right: 0rem;
+  width: 1.3rem;
+  height: 0.8rem;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人资料</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/user-info.css">
+    <script src="js/util.js"></script>    
+    <script src="js/user.js"></script>
+</head>
+<body>
+    <!-- 头部开始 -->
+    <header>
+        <a href="javascript:history.go(-1);" class="iconfont icon-iconfontjiantou1"></a>
+        <h3 class="title red">个人资料</h3>
+    </header>
+    <!-- 头部结束 -->
+    <!-- 主体部分开始 -->
+    <main>
+        <ul class="user-info-list">
+            <li>
+                <span>头像</span>
+                <div class="user-photo">
+                    <img src="images/personal-center/avatar21.png" onerror="javascript:this.src='https://i0.ulecdn.com/ulewap/i/personalv3_default_usericon.png';" alt="">
+                </div>
+            </li>
+            <li>
+                <span>昵称</span>
+                <span> <i class="iconfont icon-zhixiang"></i> </span>
+            </li>
+            <li>
+                <span>性别</span>
+                <span><a>未知 <i class="iconfont icon-zhixiang"></i></a> </span>
+            </li>
+            <li>
+                <span>收货地址</span>
+                <span><a href="addr-list.html"><span class="addr"></span> <i class="iconfont icon-zhixiang"></i> </a></span>
+            </li>
+            <li>
+                <span>绑定手机号</span>
+                <span><a id="phone_bind" href="">更换 <i class="iconfont icon-zhixiang"></i> </a></span>
+            </li>
+            <li>
+                <span>帮助中心</span>
+                <span><a id="help" href="">... <i class="iconfont icon-zhixiang"></i> </a></span>
+            </li>
+            <li>
+                <span>注销账户</span>
+                <span><a class="zhuxiao" href="">注销 <i class="iconfont icon-zhixiang"></i> </a></span>
+            </li>
+        </ul>
+    </main>
+    <!-- 主体部分结束 -->
+</body>
+<script src="js/base.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/user-info.js"></script>
+</html>

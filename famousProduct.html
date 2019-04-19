@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/famousProduct.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+</head>
+
+<body style="background-color: #f2f2f2">
+    <header>
+        <!-- 头部 固定定位 -->
+        <div class="place">
+            <div class="first">
+                <i class="iconfont icon-iconfontjiantou1"></i>
+                <span class="title"></span>
+            </div>
+        </div>
+    </header>
+    <section class="banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/famousProduct/11b9fa109e4a6fa5_-1x-1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/famousProduct/7c92864ad2af3ac6_-1x-1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/famousProduct/77ee4b5880ee82b5_-1x-1.jpg" alt="">
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <main>
+        <section class="f1">
+            <div class="optimization">
+                <h3>好货优选</h3>
+            </div>
+            <div class="good-shop">
+                <a class="vertical" href="particulars.html">
+                    <img src="images/famousProduct/8d3907975afc6083_-1x-1.jpg" alt="">
+                </a>
+                <div class="across-box">
+                    <a href="" class="across">
+                        <img src="images/famousProduct/34973a7965b782f9_-1x-1.jpg" alt="">
+                    </a>
+                    <a href="" class="across">
+                        <img src="images/famousProduct/182e7764da3adfa7_-1x-1.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="f2">
+            <div class="optimization">
+                <h3>热馆推荐</h3>
+            </div>
+            <div class="place">
+                <a href="particulars.html">
+                    <img src="images/famousProduct/1424f86b69eb82bd_-1x-1.jpg" alt="">
+                </a>
+                <a href="particulars.html">
+                    <img src="images/famousProduct/c12046fcb5cecf21_-1x-1.jpg" alt="">
+                </a>
+                <a href="particulars.html">
+                    <img src="images/famousProduct/de1cd141248b12fb_-1x-1.jpg" alt="">
+                </a>
+                <a href="particulars.html">
+                    <img src="images/famousProduct/8d60e84b948f1b4a_-1x-1.jpg" alt="">
+                </a>
+            </div>
+        </section>
+        <section class="f3">
+            <div class="optimization">
+                <h3>中华老字号</h3>
+            </div>
+            <div class="trademark">
+                <a href="particulars.html">
+                    <img src="images/famousProduct/6e54f94bdc1d4034_-1x-1.jpg" alt="">
+                </a>
+                <a href="particulars.html">
+                    <img src="images/famousProduct/549e28e8bf939b49_-1x-1.jpg" alt="">
+                </a>
+                <a href="particulars.html">
+                    <img src="images/famousProduct/b3b8afd0d8c00455_-1x-1.jpg" alt="">
+                </a>
+                <a href="particulars.html">
+                    <img src="images/famousProduct/c8d9f3513fc53164_-1x-1.jpg" alt="">
+                </a>
+            </div>
+        </section>
+        <section>
+            <div class="optimization">
+                <h3>更多推荐</h3>
+            </div>
+        </section>
+        <section class="more">
+            <script type="text/template" id="tpl">
+            <%shop.forEach(function(more){%>
+            <div class="shop">
+                <a href="particulars.html">
+                    <img src="<%=more.imgUrl%>" alt="">
+                    <p class="introduce"><%=more.listingName%></p>
+                    <p class="price"><%=more.minPrice%>
+                        <span><%=(more.minPrice/more.maxPrice*10).toFixed(1)%>折</span>
+                    </p>
+                </a>
+            </div>
+                <% }) %>
+            
+            </script>
+
+        </section>
+        <div class="floor-font">拉动继续加载</div>
+        <!-- <div class="lazy">
+            <img src="images/famousProduct/lazy.gif" alt="">
+        </div> -->
+    </main>
+
+</body>
+<script src="js/base.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/touch.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/scrollto.js"></script>
+<script src="js/fx_methods.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/fastclick.js"></script>
+<script src="js/ejs.js"></script>
+<script src="js/famousProduct.js"></script>
+
+
+
+
+</html>

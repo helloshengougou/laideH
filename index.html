@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>邮乐-网上购物新平台</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!-- 头部开始 -->
+    <header>
+        <div class="addr">
+            <img src="images/index/logo3.png" alt="">
+        </div>
+
+        <a href="search.html" class="search">
+            <input type="text" placeholder="" disabled>
+        </a>
+        <a href="personal-center.html" class="user cont">
+            <i class="iconfont icon-xiazai"></i>
+        </a>
+    </header>
+    <!-- 头部结束 -->
+    <!-- 轮播图开始 -->
+    <div class="banner">
+        <div class="swiper-container banner-container">
+            <div class="swiper-wrapper">
+                <script type="text/template" id="bannerl">
+                    <% bannerData.forEach(function(val,index){%>
+                    <div class="swiper-slide">
+                        <a>
+                            <img src="<%=val.imgUrl%>" alt="<%=val.title%>">
+                        </a>
+                    </div>
+                    <%})%>
+                </script>
+            </div>
+            <div class="swiper-pagination banner-pagination"></div>
+        </div>
+    </div>
+    <!-- 轮播图结束 -->
+    <!-- 导航部分开始 -->
+    <nav>
+        <script type="text/template" id="navl">
+            <% navData.forEach(function(val,index){%>
+            <% var url=['farming.html','class-nav.html','','special-sale.html','groupBooking.html'];var title=['莱德农品','商品分类','抢券','莱德特卖','莱德拼团']%>
+            <a href="<%=url[index]%>">
+                <figure>
+                    <img src="<%=val.imgUrl%>"/>
+                    <figcaption><%=title[index]%></figcaption>
+                </figure>
+            </a>
+            <%})%>
+        </script>
+    </nav>
+    <!-- 导航部分结束 -->
+    <!-- 广告位开始 -->
+    <div class="ad">
+        <div class="ad-pic">
+            <script type="text/template" id="adl">
+            <% adData.forEach(function(val,index){%>
+            <a href="particulars.html"><img src="<%=val.imgUrl%>" alt="<%=val.title%>"></a>
+            <%})%>
+            </script>
+        </div>
+        <div class="ad-icon">
+            <div class="word">
+                <img src="images/index/street.jpg" alt="">
+            </div>
+            <div class="swiper-container icon-container">
+                <div class="swiper-wrapper">
+                    <script type="text/template" id="iconl">
+                        <% iconData.forEach(function(val,index){%>
+                        <div class="swiper-slide">
+                            <a href="store.html">
+                                <img src="<%=val.imgUrl%>" alt="<%=val.title%>">
+                            </a>
+                        </div>
+                        <%})%>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 广告位结束 -->
+    <!-- 特色农品开始 -->
+    <div class="farming">
+        <div class="title">
+            <h3>特色农品</h3>
+            <a href="All-kinds-of-goods.html">更多农品<i class="iconfont icon-zhixiang"></i></a>
+        </div>
+        <div class="content">
+            <script type="text/template" id="farmingl">
+                <% farmingData.forEach(function(val,index){%>
+                <a href="particulars.html"><img src="<%=val.imgUrl%>" alt="<%=val.title%>" class="farm<%=index+1%>"></a>
+                <%})%>
+            </script>
+        </div>
+    </div>
+    <!-- 特色农品结束 -->
+    <!-- 今日好店铺开始 -->
+    <div class="goodstor">
+        <div class="title">
+            <div class="bar"></div>
+            <h3>今日好店铺</h3>
+        </div>
+        <div class="swiper-container goodstor-container">
+            <div class="swiper-wrapper">
+                <script type="text/template" id="goodstorl">
+                    <% goodstorData.forEach(function(val,index){%>
+                    <div class="swiper-slide">
+                        <div class="title">
+                            <div class="title-left">
+                                <div class="stor-icon">
+                                    <img src="<%=val.imgUrl%>" alt="">
+                                </div>
+                                <div class="word">
+                                    <h3><%=val.title%></h3>
+                                    <p><%=JSON.parse(val.customAttribute).subTitle%></p>
+                                </div>
+                            </div>
+                            <a href="store.html" class="title-right">进入店铺</a>
+                        </div>
+                        <div class="stor-pic">
+                            <a href="particulars.html"><img src="<%=JSON.parse(val.customAttribute).picurl_item1%>" alt=""></a>
+                            <a href="particulars.html"><img src="<%=JSON.parse(val.customAttribute).picurl_item2%>" alt=""></a>
+                            <a href="particulars.html"><img src="<%=JSON.parse(val.customAttribute).picurl_item3%>" alt=""></a>
+                        </div>
+                    </div>
+                    <%})%>
+                </script>
+            </div>
+            <div class="swiper-pagination goodstor-pagination"></div>
+        </div>
+        <!-- <div class="swiper-pagination goodstor-pagination"></div> -->
+    </div>
+    <!-- 今日好店铺结束 -->
+    <!-- 猜您喜欢开始 -->
+    <div class="more">
+        <div class="title">
+            <div class="bar"></div>
+            <h3>猜您喜欢</h3>
+        </div>
+        <ul class="content">
+        </ul>
+        <figure class="loading">  
+            <img src="images/index/loading1.gif" alt="">
+            <figcaption>加载中...</figcaption>
+        </figure>
+        <p class="no-data">已经没有任何相关数据</p>
+        <script type="text/template" id="listl">
+            <% listData.forEach(function(val,index){%>
+            <li class="list">
+                <a href="particulars.html">
+                    <img src="<%=val.imgUrl%>" alt="<%=val.listingName%>">
+                </a>
+                <p class="prod-name">
+                    <a href="particulars.html"><%=val.listingName%></a>
+                </p>
+                <div class="price">
+                    <div class="prod-price">
+                        <del>￥<%=val.maxPrice%></del>
+                        <p>￥<%=val.minPrice%></p>
+                    </div>
+                    <div class="discount">
+                        约<%=((val.minPrice/val.maxPrice)*10).toFixed(1)%>折
+                    </div>
+                </div>
+            </li>
+            <%})%>
+        </script>
+    </div>
+    <!-- 猜您喜欢结束 -->
+    <!-- 底部开始 -->
+    <footer>
+        <div class="device-type">   	
+            <a href="javascript:void(0);" class="app_type"><i></i>客户端</a>
+            <a href="javascript:void(0);" class="wap_type"><i></i>触屏版</a>
+        </div>
+        <p>沪ICP备 13037728号</p>
+        <p class="connect"><a href="javascript:void(0);" class="about">关于我们</a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="contact" href="javascript:void(0);">联系我们</a></p>
+    </footer>
+    <!-- 底部结束 -->
+    <!-- 返回顶部和购物车按钮开始 -->
+    <div class="fixed-btn">
+        <a class="go-back"><i class="iconfont icon-zhixiang-shang"></i></a>
+        <a class="shopping-cart" href="cart.html"><i class="iconfont icon-gouwuche-"></i></a>
+    </div>
+    <!-- 返回顶部和购物车按钮结束 -->
+    <!-- 搜索模块开始 -->
+    <div class="search-container">
+        <i class="iconfont icon-cuo"></i>
+        <form id="searchform" action="">
+            <input type="search"   placeholder="" >
+            <button class="search_btn">搜索</button><i class="iconfont icon-cuo1"></i>
+        </form>
+        <div class="list">
+            <ul class="search-list"></ul>
+        </div>
+        <div class="search-wrap">
+            <h3>热门搜索</h3>
+            <ul class="hot-search">
+                <script type="text/template" id="hotl">
+                    <% hotData.forEach(function(val,index){%>
+                        <li class="wap-searchkeyword">
+                            <a href="All-kinds-of-goods.html"><%=val.title%></a>
+                        </li> 
+                    <%})%>
+                </script>
+            </ul>
+        </div>
+    </div>
+    <!-- 搜索模块结束 -->
+</body>
+<script src="js/base.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/fx_methods.js"></script>
+<script src="js/scrollto.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/ejs.js"></script>
+<script src="js/fastclick.js"></script>
+<script src="js/touch.js"></script>
+<script src="js/util.js"></script>    
+<script src="js/index.js"></script>
+</html>

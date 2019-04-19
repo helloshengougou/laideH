@@ -1,0 +1,399 @@
+@import"public.scss";
+body {
+    @include bgc(#f8f5f0);
+}
+header {    
+    @include background();
+    @include width(7.5rem);
+    @include flex();
+    @include height(.8rem);
+
+    a img {
+        @include ml(.05rem);
+        @include width(1.3rem);
+        @include height(.8rem);
+    }
+    .search {
+        @include tb(0.1rem);
+        @include width(4.9rem);
+        @include height(.6rem);
+        @include bgc();
+        @include ra(.6rem);
+        @include ml(.25rem);
+    }
+    .search img {
+        @include width(.6rem);
+        @include height(.6rem);
+    }
+    .user{
+        @include width(.8rem);
+        @include height(.72rem);
+        @include tb(.04rem);
+        @include ml(.1rem);
+    }
+}
+.section-banner {
+    img  {
+        @include width(7.5rem);
+        @include height(3.5rem);
+    }
+}
+.navbar {
+    @include width(7.5rem);
+    @include flex(flex,column);
+    .nav-top,.nav-bottom {
+        @include flex(flex,row,space-between)
+    }
+    a {
+        @include tb(.2rem);
+        @include ml(auto,auto);
+        font-size: 0.24rem;
+        line-height:.6rem;
+        color: #555;
+        i {
+            display: block;
+            @include width(1rem);
+            @include height(1rem);
+            @include background(navbar,png);
+            background-size: 8.4rem;
+        }
+    }
+    .fupin i {
+        background-position: -.5rem -.2rem;
+    }
+    .specialty i {
+        background-position: -2.1rem -.2rem;
+    }
+    .selected i {
+        background-position: -3.7rem -.2rem;
+    }
+    .lab i {
+        background-position: -5.3rem -.2rem;
+    }
+    .category i {
+        background-position: -6.9rem -.2rem;
+    }
+    .fruits i {
+        background-position: -.5rem -1.5rem;
+    }
+    .grain i {
+        background-position: -2.1rem -1.5rem;
+    }
+    .snack i {
+        background-position: -3.7rem -1.5rem;
+    }
+    .drysaltery i {
+        background-position: -5.3rem -1.5rem;
+    }
+    .tea i {
+        background-position: -6.9rem -1.5rem;
+    }
+}
+.section-new {
+    @include width(6.75rem);
+    @include height(.72rem);
+    @include bgc();
+    border-radius: .3rem;
+    line-height: .72rem;
+    p {
+        @include width(6.75rem);
+        @include height(.72rem);
+        overflow: hidden;
+        @include flex();
+    }
+    i {
+        display: block;
+        @include background(nptoutiao,png);
+        background-position: 0 center;
+        color: red;
+        background-size: 1.6rem;
+        padding-left: 1.6rem;
+    }
+    .swiper-button-next {
+        position: absolute;
+        top: .44rem;
+        right: 0;
+        @include width(1.2rem);
+        @include height(.72rem);
+        line-height:.72rem;
+        color: #666;
+        text-align: center;
+        @include bgc();
+        z-index: 2;
+        background-image: none;
+    }
+}
+.groups {
+    .group {
+        @include width(7.5rem);
+        @include height(1.16rem);
+    }
+    ul {
+        @include flex();
+    }
+    li {
+        padding: .1rem;
+        padding-bottom: .3rem;
+        .old {
+            @include width(.8rem);
+            text-align: center;
+            border-radius: .06rem;
+            background: #eee;
+            line-height: .48rem;
+            color: #999;
+            -webkit-border-radius: .06rem;
+            -moz-border-radius: .06rem;
+            -ms-border-radius: .06rem;
+            -o-border-radius: .06rem;
+}
+        img {
+            @include width(2.2996rem);
+            @include height(2.2996rem);
+        }
+        .price {
+            color: #999;
+            @include height(.48rem);
+            line-height: (.48rem);
+            span:nth-child(2n) {
+                @include width(.8rem);
+                overflow: hidden;
+                color: red;
+                font-family: sans-serif;
+                font-size: .25rem;
+            }
+        }
+        .title {
+            height: .8rem;
+            color: #000;
+            font-size: .28rem;
+            line-height: .8rem;
+            @include width(2.2996rem);
+            overflow: hidden;
+        }
+        .btn {
+            padding: .06rem 0;
+            width: 100%;
+            border-radius: .1rem;
+            background: #e42222;
+            color: #fff;
+            text-align: center;
+        }
+    }
+}
+.selected {
+    ul {
+        @include width(7.5rem);
+        @include height(4.25.8rem);
+        @include flex(flex,row,space-between);
+        li {
+            a {
+                overflow: hidden;
+                img {
+                    @include width(2.24rem);
+                    @include height(2.24rem);
+                }
+                .title {
+                    overflow: hidden;
+                    height: .6rem;
+                    line-height: .6rem;
+                    color: #000;
+                }
+                .tag {
+                    overflow: hidden;
+                    height: .4rem;
+                    color: #666;
+                    text-align: center;
+                    font-size: .24rem;
+                    line-height: .4rem;
+                }
+                .price {
+                    overflow: hidden;
+                    height: .6rem;
+                    color: #a2733d;
+                    text-align: center;
+                    font-size: .28rem;
+                    font-family: Verdana,Arial,Helvetica;
+                    line-height: .6rem;
+                }
+            }
+        }
+    }
+}
+.daykill {
+    @include flex();
+    .seckday {
+        @include width(1.88rem);
+        @include height(2.22rem);
+        @include tb(.2rem,.2rem);
+    }
+    ul {
+        @include flex(flex,row,space-between);
+    }
+    li {
+        @include tb(.2rem,.2rem);
+        padding: .06rem;
+        img {
+            @include width(1.72rem);
+            @include height(1.72rem);
+
+        }
+        p {
+            overflow: hidden;
+            @include tb(.12rem);
+            height: .36rem;
+            color: #e70;
+            .cost {
+            padding: 0 .04rem;
+            border-radius: .06rem;
+            background: #fe506a;
+            color: #fff;
+            font-size: .24rem;
+            }
+        }
+        
+    }
+}
+// 扶贫开始
+.fupin {
+    @include bgc();
+    @include tb(.2rem,.2rem);
+    .fupi {
+        @include width(7.5rem);
+        @include height(1.16rem);
+    }
+    .fupinC {
+        @include flex();
+        .fupinH {
+            ul {
+                li {
+                    a {
+                        img {
+                            @include width(3.75rem);
+                            @include height(1.8rem);
+                        }
+                    }
+                }
+            }
+        }
+        .fupinG {
+            ul {
+                li {
+                   .fupinG-1 {
+                       @include width(3.75rem);
+                       @include height(1.8rem);
+                   }
+                }
+                .fupinGl {
+                    @include flex();
+                    .fu {
+                        float: left;
+                        @include width(1.88rem);
+                   } 
+                }
+            }
+        }
+    }
+}
+// 扶贫结束
+// 达人开始
+.daren {
+    @include bgc();
+    @include tb(.2rem,.2rem);
+    .dare {
+        @include width(7.5rem);
+        @include height(1.16rem);
+    }
+    ul {
+        li {
+            img {
+                float: left;
+                @include width(3.75rem);
+                @include height(2.3rem);
+            }
+        }
+    }
+}
+// 达人结束
+// 热门地方馆开始
+.hotH {
+    @include bgc();
+    @include tb(.2rem,.2rem);
+    .hot {
+        @include width(7.5rem);
+        @include height(1.16rem);
+    }
+    ul {
+        img {
+            @include tb(.2rem);
+            @include width(1.875rem);
+            @include height(2.5rem);
+            float:left;
+        }
+        li:first-child img{
+            @include width(3.75rem);
+            @include height(2.5rem);
+        }
+    }
+}
+// 热门地方官结束
+// 更多推荐开始
+.more {
+    p {
+        display: none;
+        text-align: center;
+        font-size: .25rem;
+    }
+    @include width(7.5rem);
+    @include bgc();
+    @include tb(.2rem,.2rem);
+    .mor {
+        @include width(7.5rem);
+        @include height(.8rem);
+    }
+    ul {
+        padding: .1rem;
+        @include flex(flex,row);
+        flex-wrap: wrap;
+        li {
+            @include flex(flex,column);
+            width: 50%;
+            // float: left;
+            .title {
+                @include width(3.45rem);
+                overflow: hidden;
+                @include tb(.1rem,.1rem);
+                padding: 0 .1rem;
+                @include height(.56rem);
+                color: #555;
+                font-size: .28rem;
+                line-height: .28rem;
+            }
+            .price {
+                @include flex(flex,row,space-between);
+                >span {
+                    padding: .1rem;
+                    color: #e70;
+                    font-size: .4rem;
+                }
+                div{
+                    height: .49rem;
+                    line-height: .49rem;
+                    margin-top: .06rem;
+                    margin-right: .3rem;
+                    padding: 0 .06rem;
+                    border-radius: .06rem;
+                    background: #ff9f82;
+                    color: #fff;
+                    font-size: .12rem;
+                }
+               
+            }
+        }
+        
+    }
+    img {
+        @include width(3.45rem);
+        @include height(3.52rem);
+    }
+}
+// 更多推荐结束

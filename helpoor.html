@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/helpoor.css">
+ 
+</head>
+<body>
+    <header>
+        <img src="images/helpoor/header.jpg" alt="">
+    </header>
+    <section>
+        <ul>
+
+        </ul>
+    </section>
+    <script type = "text/template" class = "helpoo">
+            <% list.ulenp_2016_prod_list2.forEach(function(ulenp_2016_prod_list2){ %>
+                <li>
+                    <img src="<%=ulenp_2016_prod_list2.imgUrl%>" alt="">
+                    <h3><%=ulenp_2016_prod_list2.listingName%></h3>
+                    <p>活动价<%=ulenp_2016_prod_list2.minPrice%></p>
+                    <p>立即购买</p>
+                </li>
+            <% }) %>
+    </script>
+    <script src="js/require.js" data-main="js/helpmain"></script>
+
+</body>
+</html>

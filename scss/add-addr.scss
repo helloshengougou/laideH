@@ -1,0 +1,180 @@
+@charset 'utf-8';
+$width:7.5rem;
+body{
+    background-color: #f2f2f2;
+}
+//头部开始
+header{
+    width: $width;
+    position: relative;
+    text-align: center;
+    h3{
+        background: #fefefe;
+        border-bottom: none;
+        color: #333333;
+        // position: relative;
+        height: .8rem;
+        width: $width;
+        line-height: .8rem;
+        // text-align: center;
+        font-size: .36rem;
+        font-weight: 400;
+        box-sizing: border-box;
+    }
+    a.iconfont{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1rem;
+        height: 0.8rem;
+        line-height: .8rem;
+        font-size: .5rem;
+        font-weight: bold;
+        color: #333;
+    }
+}
+// 头部结束
+// 主体部分开始
+main{
+    width: $width;
+    ul{
+        margin-top: .22rem;
+    }
+    li{
+        display: flex;
+        align-items: center;
+        color: #000;
+        font-size: .28rem;
+        // position: relative;
+        padding: .1rem .2rem;
+        line-height: .6rem;
+        border-bottom: .02rem solid #f2f2f2;
+    }
+    span{
+        // position: absolute;
+        // left: 10px;
+        text-align: center;
+        width: 1.6rem;
+        height: .8rem;
+        line-height: .8rem;
+        color: #000;
+        font-size: .28rem;
+    }
+    input{
+        border: none;
+        width: 5.6rem;
+        padding-left: 10px;
+        box-sizing: border-box;
+        font-size: 14px;
+        line-height: 20px;
+        // font-family: "microsoft yahei";
+        text-indent: 12px;
+        padding: 8px 0;
+        display: inline-block;
+        outline: 0;
+    }
+}
+// 主体部分结束
+// 收货地址按钮开始
+.btn{
+    margin-top: 1.8rem;
+    button{
+        width: 4.87rem;
+        height: 0.8rem;
+        // width: 65%;
+        // height: 40px;
+        outline: 0;
+        border: 0;
+        background: #e42222;
+        border-radius: .4rem;
+        line-height: .8rem;
+        text-align: center;
+        font-size: .28rem;
+        color: #fff;
+        margin: 0 auto .4rem;
+        display: block;
+    }
+}
+// 收货地址按钮结束
+// 地址选择层开始
+.ceng{
+    position: fixed;
+    top: 0;
+    height: 100%;
+    background: rgba(0,0,0,.7);
+    // max-width: 640px;
+    width: $width;
+    z-index: 3;
+    display: none;
+    .addr{
+        position: absolute;
+        bottom: 0;
+        background: #f2f2f2;
+        width: 100%;
+        max-height: 8rem;
+        font-size: .28rem;
+        .title{
+            background: #fff;
+            text-align: center;
+            padding: .1rem 0;
+            i{
+                position: absolute;
+                top: 0;
+                left: 6.9rem;
+                font-size: .45rem;                  
+            }
+        }
+        .address{
+            background: #fff;
+
+            span{
+                display: inline-block;
+                line-height: .9rem;
+                padding: 0 .2rem;
+                position: relative;
+                // visibility: hidden;
+                &.active{
+                    // visibility: unset;
+                    color: #fd3000;
+                    &:after{
+                        width: 90%;
+                        height: 0.04rem;
+                        background: #fd3000;
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 5%;
+                    }
+                }
+            }
+        }
+        .select{
+            line-height: .47rem;
+            color: #333;
+            min-height: 1rem;
+            overflow-y: scroll;
+            max-height: 4rem;
+            padding-bottom: .52rem;
+            p{
+                padding: .14rem .2rem;
+            }
+        }
+    }
+}
+// 地址选择层结束
+// 提示框样式
+.tip-box{
+    position: fixed;
+    left: 50%;
+    top: 30%;
+    margin-left: -3rem;
+    width: 6rem;
+    height: 1.6rem;
+    border-radius: .1rem;
+    line-height: 1.6rem;
+    font-size: .32rem;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .8);
+    display: none;
+}

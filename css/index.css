@@ -1,0 +1,93 @@
+@charset "UTF-8";
+body {
+  margin: 0 auto;
+  width: 100%;
+}
+
+header {
+  width: 7.5rem;
+  height: .8rem;
+  color: #fff;
+  background-color: #c9152300;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 2;
+}
+
+header .addr {
+  height: 0.8rem;
+  width: 0.8rem;
+  padding: 0.1rem;
+}
+
+header .addr img {
+  height: 0.6rem;
+  width: auto;
+}
+
+header .search {
+  height: 0.6rem;
+  width: 5.44rem;
+  border-radius: .3rem;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  -webkit-border-radius: .3rem;
+  -moz-border-radius: .3rem;
+  -ms-border-radius: .3rem;
+  -o-border-radius: .3rem;
+}
+
+header .search input {
+  height: 0.6rem;
+  width: 5rem;
+  margin: 0 auto;
+  border: 0;
+  background: transparent;
+  outline: 0;
+}
+
+header .search input::-webkit-input-placeholder {
+  text-align: center;
+  font-size: 0.3rem;
+}
+
+header .user {
+  width: 0.8rem;
+  height: 0.8rem;
+  text-align: center;
+  position: relative;
+  color: #fff;
+}
+
+header .user i {
+  font-size: 0.65rem;
+  line-height: 0.9rem;
+  display: none;
+}
+
+header .user:after {
+  content: '登录';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.8rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: .3rem;
+  text-align: left;
+}
+
+.banner {
+  width: 7.5rem;
+  height: 3.56rem;
+}
+
+.banner img {
+  width: 7.5rem;
+  height: 3.56rem;
+}

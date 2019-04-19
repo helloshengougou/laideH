@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>天天特卖</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/special-sale.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <header>
+        <h3>
+            <a href="index.html"></a>
+            <p>天天特卖</p>
+        </h3>
+    </header>
+    <main>
+        <!-- 轮播图 -->
+        <div class="banner swiper-container">
+
+        </div>
+        <script type="text/template" class="ban-tmp">
+            <div class="swiper-wrapper">
+                <%list.event2017_temai_bannerImg.forEach(function(event2017_temai_bannerImg){%>
+                    <div class="swiper-slide">
+                        <a href=""><img src="<%=event2017_temai_bannerImg.imgUrl%>" alt=""></a>
+                    </div>
+                <%})%>
+            </div>
+            <div class="swiper-pagination"></div>
+        </script>
+        <div class="week">
+            
+        </div>  
+        <script type="text/template" class="week-tmp">
+            <div class="title">
+                <img src="images/sale/title_img.png" alt="">
+            </div>
+            <div>
+                <ul>
+                    <%list.event2017_temai_weekImg.forEach(function(event2017_temai_weekImg){%>
+                        <li>
+                            <a href="">
+                                <img src="<%=event2017_temai_weekImg.imgUrl%>" alt="">
+                                <p>
+                                    <i><%=event2017_temai_weekImg.title%></i>
+                                    <span>
+                                        <b><%=JSON.parse(event2017_temai_weekImg.customAttribute).price%></b>
+                                        元起
+                                    </span>
+                                </p>
+                            </a>
+                        </li>
+                    <%})%>
+                </ul>
+            </div>
+        </script>
+        <div class="new-pro">
+        </div>
+        <script type="text/template" class="newpro-tmp">
+            <h3>每日<em>10点</em>准时上新</h3>
+            <div class="temai">
+                <%list.forEach(function(list){%>
+                    <div class="temai-cont">
+                        <a href="">
+                            <em>进行中</em>
+                            <img src="<%=list.publicPic%>" alt="">
+                        </a>
+                    
+                        <div class="temai-title">
+                            <div class="detail">
+                                <span class="brandName"><%=list.promotionName%></span>
+                                <div class="stop-time">
+                                        <span class="countdown" start-time="<%=list.startTime%> 10:00:00" end-time="<%=list.endTime%> 10:00:00">
+                                            <em>距结束</em>
+                                            <i class="sct-d"></i>天
+                                            <i class="sct-h"></i>时
+                                            <i class="sct-m"></i>分
+                                            <i class="sct-s"></i>秒
+                                        </span>
+
+                                    
+                                </div>
+                            </div>
+                            <span class="discount"><span class="max"><%=list.discountMax%></span>折起</span>   
+                        </div>
+                    </div>
+                <%})%>
+            </div>
+        </script>
+        
+    </main>
+    <footer>
+        <div class="back-btn">
+            <a href="#" class="go-back"></a>
+        </div>
+    </footer>
+</body>
+<script src="js/base.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/ejs.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/special-sale.js"></script>
+</html>
